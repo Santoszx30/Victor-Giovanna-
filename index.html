@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victor ❤️ Giovanna</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #000000, #8b0000);
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 5px;
+    }
+
+    .heart {
+      color: red;
+    }
+
+    .contador {
+      font-size: 1.2em;
+      margin-top: 20px;
+      background: rgba(0,0,0,0.5);
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 15px;
+    }
+
+    section {
+      padding: 30px 20px;
+    }
+
+    .mensagem {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1em;
+      background: rgba(0,0,0,0.5);
+      padding: 25px;
+      border-radius: 20px;
+    }
+
+    .mensagem button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #8b0000;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Victor <span class="heart">❤️</span> Giovanna</h1>
+    <p style="font-size:1.2em; opacity:0.9;">
+      Uma história escrita com amor, carinho e infinitos momentos juntos
+    </p>
+
+    <div class="contador" id="contador"></div>
+
+    <div style="margin-top:25px;">
+      <p>🎵 Nossa música</p>
+
+      <div style="position:relative; padding-top:56.25%; max-width:420px; margin:0 auto;">
+        <iframe
+          src="https://www.youtube.com/embed/8a9mKk9oQzA?autoplay=1&mute=1&loop=1&playlist=8a9mKk9oQzA"
+          title="Poesia Acústica 13"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:15px;">
+        </iframe>
+      </div>
+
+      <p style="font-size:0.9em; opacity:0.8;">
+        Toque no vídeo para ativar o som 🔊
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <div class="mensagem">
+      <p>
+        Giovanna, desde o dia em que nossas vidas se cruzaram, tudo ganhou mais cor,
+        mais sentido e mais amor. Você é meu sorriso fácil, minha paz nos dias difíceis
+        e meu motivo diário de felicidade.
+      </p>
+
+      <p>
+        Que cada segundo contado aqui seja apenas o começo de uma eternidade ao seu lado.
+        Eu te amo. ❤️
+      </p>
+
+      <button onclick="mostrarSurpresa()">Clique para uma surpresa 💌</button>
+
+      <p id="surpresa" style="display:none; margin-top:20px; color:#ffb6c1;">
+        Você é o melhor presente que a vida me deu. Obrigado por existir e por escolher
+        caminhar comigo. 🖤❤️
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Nossos Momentos 📸</h2>
+
+    <div class="galeria">
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+      <img src="foto3.jpg" alt="Foto 3">
+      <img src="foto4.jpg" alt="Foto 4">
+      <img src="foto5.jpg" alt="Foto 5">
+      <img src="foto6.jpg" alt="Foto 6">
+    </div>
+  </section>
+
+  <footer>
+    Feito com ❤️ por Victor
+  </footer>
+
+  <script>
+    const inicio = new Date("2025-11-24T00:00:00");
+
+    function atualizarContador() {
+      const agora = new Date();
+      const diff = agora - inicio;
+
+      if (diff < 0) {
+        document.getElementById("contador").innerHTML =
+          "Nossa história começa em breve 💖";
+        return;
+      }
+
+      const segundos = Math.floor(diff / 1000) % 60;
+      const minutos = Math.floor(diff / (1000 * 60)) % 60;
+      const horas = Math.floor(diff / (1000 * 60 * 60)) % 24;
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      document.getElementById("contador").innerHTML =
+        `Estamos juntos há <strong>${dias}</strong> dias,
+         <strong>${horas}</strong> horas,
+         <strong>${minutos}</strong> minutos e
+         <strong>${segundos}</strong> segundos ❤️`;
+    }
+
+    function mostrarSurpresa() {
+      document.getElementById("surpresa").style.display = "block";
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
+
+</body>
+  </html>
